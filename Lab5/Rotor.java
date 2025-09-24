@@ -13,7 +13,10 @@ public class Rotor {
     }
     
     public boolean rotate(){
-        //TODO
+        //current first char = startChar
+        if (rotorValues[0] == startChar){
+            return true;
+        }
                
     }
     
