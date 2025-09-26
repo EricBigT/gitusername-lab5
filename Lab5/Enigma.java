@@ -23,12 +23,13 @@ public class Enigma{
         String str = "";
         for (int j = 0; j < message.length; j++){
             int i = rotor[2].indexOf(message.charAt[0]);
-            char ch = rotor[0].charAt[i];
-            i = rotor[1].indexOf(ch);
+            char ch = rotor[1].charAt[i];
+            i = rotor[2].indexOf(ch);
             ch = rotor[0].charAT(i);
             str += ch;
             rotate();
         }
+
         return str;
     }
 
@@ -45,7 +46,6 @@ public class Enigma{
             rotate();
         }
         return str;
-
     }
 
     
