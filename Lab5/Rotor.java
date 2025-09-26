@@ -13,25 +13,31 @@ public class Rotor {
     }
     
     public boolean rotate(){
-        //current first char = startChar
-        char[] newInner = new char[v.length];
-        newInner[0] = v[0];
-        for (int i = 1; i < v.length - 1; i++){
-            newInner[i] = v[i+1];
+        char[] newInner = new char[rotorValues.length]; //create new inner ring 
+        newInner[0] = rotorValues[0];
+        for (int i = 1; i < rotorValues.length - 1; i++){ // set first value and shift all other values
+            newInner[i] = rotorValues[i+1];
         }
         String str = new String(newInner);
-        return true;
+        
+        if (newInner[0] == startChar){ //check new first element = old first element
+            return true;
+        }
+
+        return false;
     }
     
 
     public int indexOf(char c){
         for (int i = 0; i < rotorValues.length; i++){
-            
+            if (rotorValues[i] == c){
+                return i;
+            }
         }
     }
 
     public char charAt(int idx){
-        //TODO
+        return rotorValues[idx];
     }
 }
     
