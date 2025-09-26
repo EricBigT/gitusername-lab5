@@ -14,15 +14,20 @@ public class Rotor {
     
     public boolean rotate(){
         //current first char = startChar
-        if (rotorValues[0] == startChar){
-            return true;
+        char[] newInner = new char[v.length];
+        newInner[0] = v[0];
+        for (int i = 1; i < v.length - 1; i++){
+            newInner[i] = v[i+1];
         }
-               
+        String str = new String(newInner);
+        return true;
     }
     
 
     public int indexOf(char c){
-        //TODO
+        for (int i = 0; i < rotorValues.length; i++){
+            
+        }
     }
 
     public char charAt(int idx){
