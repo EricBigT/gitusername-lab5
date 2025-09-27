@@ -21,12 +21,12 @@ public class Enigma{
 
     public String decrypt(String message){        
         String str = "";
-        for (int j = 0; j < message.length(); j++){
+        for (int j = 0; j < message.length(); j++){ // iterate through the given message
             int i = rotors[2].indexOf(message.charAt(j));
             char ch = rotors[1].charAt(i);
             i = rotors[2].indexOf(ch);
             ch = rotors[0].charAt(i);
-            str += ch;
+            str += ch; // after going through each rotor addd the new char to the decrypted string
             rotate();
         }
 
@@ -37,12 +37,12 @@ public class Enigma{
     
     public String encrypt(String message){
         String str = "";
-        for (int j = 0; j < message.length(); j++){
+        for (int j = 0; j < message.length(); j++){ // iterate through the given message
             int i = rotors[0].indexOf(message.charAt(j));
             char ch = rotors[2].charAt(i);
             i = rotors[1].indexOf(ch);
             ch = rotors[2].charAt(i);
-            str += ch;
+            str += ch; // after going through each rotor add the new char to the encrypted string
             rotate();
         }
         return str;
