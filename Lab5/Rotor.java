@@ -13,12 +13,12 @@ public class Rotor {
     }
     
     public boolean rotate(){
-        char[] newInner = new char[rotorValues.length]; //create new inner ring 
-        newInner[0] = rotorValues[0];
-        for (int i = 1; i < rotorValues.length - 1; i++){ // set first value and shift all other values
-            newInner[i] = rotorValues[i+1];
+        char[] newInner = new char[rotorValues.length()]; //create new inner ring 
+        newInner[0] = rotorValues.charAt(rotorValues.length()-1);
+        for (int i = 1; i < rotorValues.length(); i++){ // set first value and shift all other values
+            newInner[i] = rotorValues.charAt(i-1);
         }
-        String str = new String(newInner);
+        this.rotorValues = new String(newInner);
         
         if (newInner[0] == startChar){ //check new first element = old first element
             return true;
@@ -29,15 +29,16 @@ public class Rotor {
     
 
     public int indexOf(char c){
-        for (int i = 0; i < rotorValues.length; i++){
-            if (rotorValues[i] == c){
+        for (int i = 0; i < rotorValues.length(); i++){
+            if (rotorValues.charAt(i) == c){
                 return i;
             }
         }
+        return -1;
     }
 
     public char charAt(int idx){
-        return rotorValues[idx];
+        return rotorValues.charAt(idx);
     }
 }
     

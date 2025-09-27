@@ -21,11 +21,11 @@ public class Enigma{
 
     public String decrypt(String message){        
         String str = "";
-        for (int j = 0; j < message.length; j++){
-            int i = rotor[2].indexOf(message.charAt[0]);
-            char ch = rotor[1].charAt[i];
-            i = rotor[2].indexOf(ch);
-            ch = rotor[0].charAT(i);
+        for (int j = 0; j < message.length(); j++){
+            int i = rotors[2].indexOf(message.charAt(j));
+            char ch = rotors[1].charAt(i);
+            i = rotors[2].indexOf(ch);
+            ch = rotors[0].charAt(i);
             str += ch;
             rotate();
         }
@@ -37,11 +37,11 @@ public class Enigma{
     
     public String encrypt(String message){
         String str = "";
-        for (int j = 0; j < message.length; j++){
-            int i = rotor[0].indexOf(message.charAt[0]);
-            char ch = rotor[2].charAt(i);
-            i = rotor[1].indexOf(ch);
-            ch = rotor[2].charAt(i);
+        for (int j = 0; j < message.length(); j++){
+            int i = rotors[0].indexOf(message.charAt(j));
+            char ch = rotors[2].charAt(i);
+            i = rotors[1].indexOf(ch);
+            ch = rotors[2].charAt(i);
             str += ch;
             rotate();
         }
